@@ -1,0 +1,178 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Artist {
+  id            String   @id @default(uuid())
+  slug          String   @unique
+  email         String   @unique
+  phone         String
+  passwordHash  String
+  name          String
+  businessName  String?
+  bio           String?
+  tagline       String?
+  avatarUrl     String?
+  coverUrl      String?
+  instagramHandle String?
+  whatsappNumber  String?
+  city          String   @default("Delhi NCR")
+  locality      String?
+  languages     String   @default("Hindi,English")
+  yearsOfExp    Int      @default(0)
+  isVerified    Boolean  @default(false)
+  isActive      Boolean  @default(true)
+  showWhatsapp  Boolean  @default(true)
+  showBookingForm Boolean @default(true)
+  themeColor    String   @default("#1a1a1a")
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  services      Service[]
+  portfolio     PortfolioItem[]
+  bookings      Booking[]
+  reviews       Review[]
+  earnings      Earning[]
+  clients       Client[]
+  auditResults  AuditResult[]
+  pageViews     PageView[]
+}
+
+model Service {
+  id          String  @id @default(uuid())
+  artistId    String
+  name        String
+  description String?
+  duration    Int     @default(60)
+  priceType   String  @default("fixed") // fixed | range | hidden
+  price       Int?
+  priceMin    Int?
+  priceMax    Int?
+  isActive    Boolean @default(true)
+  sortOrder   Int     @default(0)
+  category    String  @default("bridal") // bridal | party | editorial | engagement | other
+
+  artist      Artist    @relation(fields: [artistId], references: [id], onDelete: Cascade)
+  bookings    Booking[]
+
+  @@index([artistId])
+}
+
+model PortfolioItem {
+  id          String  @id @default(uuid())
+  artistId    String
+  imageUrl    String
+  caption     String?
+  category    String  @default("bridal")
+  isFeatured  Boolean @default(false)
+  sortOrder   Int     @default(0)
+  createdAt   DateTime @default(now())
+
+  artist      Artist  @relation(fields: [artistId], references: [id], onDelete: Cascade)
+
+  @@index([artistId])
+}
+
+model Booking {
+  id            String   @id @default(uuid())
+  artistId      String
+  serviceId     String?
+  clientName    String
+  clientPhone   String
+  clientEmail   String?
+  eventDate     DateTime
+  eventType     String?
+  eventLocation String?
+  notes         String?
+  status        String   @default("pending") // pending | confirmed | completed | cancelled
+  source        String   @default("booking_page") // booking_page | whatsapp | discovery
+  totalAmount   Int?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  artist        Artist   @relation(fields: [artistId], references: [id], onDelete: Cascade)
+  service       Service? @relation(fields: [serviceId], references: [id], onDelete: SetNull)
+
+  @@index([artistId])
+  @@index([eventDate])
+}
+
+model Review {
+  id          String   @id @default(uuid())
+  artistId    String
+  clientName  String
+  rating      Int
+  comment     String?
+  eventType   String?
+  isVisible   Boolean  @default(true)
+  createdAt   DateTime @default(now())
+
+  artist      Artist   @relation(fields: [artistId], references: [id], onDelete: Cascade)
+
+  @@index([artistId])
+}
+
+model Earning {
+  id          String   @id @default(uuid())
+  artistId    String
+  amount      Int
+  description String?
+  date        DateTime
+  category    String?
+  createdAt   DateTime @default(now())
+
+  artist      Artist   @relation(fields: [artistId], references: [id], onDelete: Cascade)
+
+  @@index([artistId])
+  @@index([date])
+}
+
+model Client {
+  id            String   @id @default(uuid())
+  artistId      String
+  name          String
+  phone         String?
+  email         String?
+  weddingDate   DateTime?
+  skinType      String?
+  allergies     String?
+  preferences   String?
+  notes         String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  artist        Artist   @relation(fields: [artistId], references: [id], onDelete: Cascade)
+
+  @@index([artistId])
+}
+
+model AuditResult {
+  id          String   @id @default(uuid())
+  artistId    String
+  overallScore Int
+  reportJson  String   // JSON string with detailed breakdown
+  createdAt   DateTime @default(now())
+
+  artist      Artist   @relation(fields: [artistId], references: [id], onDelete: Cascade)
+
+  @@index([artistId])
+}
+
+model PageView {
+  id          String   @id @default(uuid())
+  artistId    String
+  viewerIp    String?
+  referrer    String?
+  userAgent   String?
+  createdAt   DateTime @default(now())
+
+  artist      Artist   @relation(fields: [artistId], references: [id], onDelete: Cascade)
+
+  @@index([artistId])
+  @@index([createdAt])
+}

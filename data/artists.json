@@ -1,0 +1,1330 @@
+[
+  {
+    "id": "art_priya_sharma",
+    "slug": "priyasharma",
+    "email": "priya@example.com",
+    "phone": "9811223344",
+    "passwordHash": "$2b$10$7JUStNYBsMcXndDIee13VuPQgGW4jO7aBLNPHWQvr3aCYl3zWF06y",
+    "name": "Priya Sharma",
+    "businessName": "Priya Sharma Bridal Studio",
+    "tagline": "Celebrity & Bridal Makeup Artist | Luxury Glass Skin",
+    "bio": "Specializing in royal North Indian bridal looks, soft glam sangeet styles, and HD airbrush finishes. Over 6 years transforming 400+ brides across Delhi NCR, Udaipur, and Jaipur.",
+    "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
+    "coverUrl": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1200&q=80",
+    "instagramHandle": "priyasharmamua",
+    "whatsappNumber": "9811223344",
+    "city": "Delhi NCR",
+    "locality": "South Delhi",
+    "languages": "Hindi,English,Punjabi",
+    "yearsOfExp": 6,
+    "isVerified": true,
+    "isActive": true,
+    "showWhatsapp": true,
+    "showBookingForm": true,
+    "themeColor": "#C4A265",
+    "createdAt": "2026-10-24T13:54:33.158Z",
+    "updatedAt": "2026-10-24T13:54:33.159Z",
+    "services": [
+      {
+        "id": "srv_1",
+        "name": "Royal Heritage HD Bridal",
+        "description": "Complete HD Airbrush makeup, 3D mink lashes, jewelry setting, dupatta draping, skin prep facial, and bridal touch-up kit.",
+        "duration": 180,
+        "priceType": "fixed",
+        "price": 28000,
+        "category": "bridal",
+        "isActive": true
+      },
+      {
+        "id": "srv_2",
+        "name": "Cocktail & Sangeet Glam",
+        "description": "Luminous dewy skin, dramatic eyes, glitter pigment accents, and high-glam Hollywood waves or floral hairdo.",
+        "duration": 120,
+        "priceType": "fixed",
+        "price": 14000,
+        "category": "party",
+        "isActive": true
+      },
+      {
+        "id": "srv_3",
+        "name": "Pre-Wedding / Engagement Look",
+        "description": "Soft-focus camera-ready matte or dewy finish tailored to your lehenga color palette.",
+        "duration": 120,
+        "priceType": "range",
+        "priceMin": 16000,
+        "priceMax": 20000,
+        "category": "engagement",
+        "isActive": true
+      }
+    ],
+    "portfolio": [
+      {
+        "id": "pf_1",
+        "imageUrl": "https://images.unsplash.com/photo-1546804784-896d0dca3805?auto=format&fit=crop&w=800&q=80",
+        "caption": "Traditional Red Lehenga Bridal Glam — South Delhi Bride",
+        "category": "bridal",
+        "isFeatured": true
+      },
+      {
+        "id": "pf_2",
+        "imageUrl": "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=600&q=80",
+        "caption": "Subtle Pastel Pink Reception Look",
+        "category": "bridal",
+        "isFeatured": false
+      },
+      {
+        "id": "pf_3",
+        "imageUrl": "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80",
+        "caption": "Sangeet Night Smokey Eye Drama",
+        "category": "party",
+        "isFeatured": false
+      },
+      {
+        "id": "pf_4",
+        "imageUrl": "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=600&q=80",
+        "caption": "Minimal Mehndi Glow",
+        "category": "engagement",
+        "isFeatured": false
+      }
+    ],
+    "reviews": [
+      {
+        "id": "rev_1",
+        "clientName": "Aanya Kapoor",
+        "rating": 5,
+        "eventType": "Wedding at ITC Maurya",
+        "comment": "Priya made me look like an absolute dream on my wedding day. The makeup didn't budge even after 14 hours and emotional pheras!",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "rev_2",
+        "clientName": "Simran Gujral",
+        "rating": 5,
+        "eventType": "Sangeet at Gurgaon",
+        "comment": "Hands down the most professional MUA in Delhi NCR. Booked her directly through her link without any back-and-forth DM stress.",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      }
+    ],
+    "bookings": [
+      {
+        "id": "bkg_spck4gu",
+        "artistId": "art_priya_sharma",
+        "serviceId": null,
+        "clientName": "Tanvi Singhania",
+        "clientPhone": "9911223344",
+        "clientEmail": null,
+        "eventDate": "2026-11-20T00:00:00.000Z",
+        "eventType": "Bridal",
+        "eventLocation": "Taj Palace Delhi",
+        "notes": "Airbrush makeup preferred",
+        "status": "pending",
+        "source": "booking_page",
+        "totalAmount": null,
+        "createdAt": "2026-10-24T14:21:21.539Z",
+        "updatedAt": "2026-10-24T14:21:21.539Z"
+      },
+      {
+        "id": "bkg_1",
+        "clientName": "Kritika Sen",
+        "clientPhone": "9899123456",
+        "eventDate": "2026-10-29T13:54:33.159Z",
+        "eventType": "Bridal Wedding",
+        "eventLocation": "The Leela Palace, Chanakyapuri, Delhi",
+        "notes": "Bride prefers matte finish. Allergies to heavy fragrance.",
+        "status": "pending",
+        "totalAmount": 28000,
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "bkg_2",
+        "clientName": "Mehak Verma",
+        "clientPhone": "9988776655",
+        "eventDate": "2026-11-05T13:54:33.159Z",
+        "eventType": "Sangeet Ceremony",
+        "eventLocation": "Taj City Centre, Gurgaon",
+        "notes": "Needs 2 extra bridesmaids light party makeup.",
+        "status": "confirmed",
+        "totalAmount": 22000,
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      }
+    ],
+    "clients": [
+      {
+        "id": "clt_4nuxpc5",
+        "artistId": "art_priya_sharma",
+        "name": "Tanvi Singhania",
+        "phone": "9911223344",
+        "email": null,
+        "weddingDate": null,
+        "notes": "Airbrush makeup preferred",
+        "createdAt": "2026-10-24T14:21:21.542Z"
+      },
+      {
+        "id": "clt_1",
+        "name": "Kritika Sen",
+        "phone": "9899123456",
+        "weddingDate": "2026-10-29T13:54:33.159Z",
+        "skinType": "Combination - Sensitive",
+        "allergies": "Fragrance",
+        "notes": "Warm undertone lehenga"
+      }
+    ],
+    "earnings": [
+      {
+        "id": "ern_1",
+        "amount": 28000,
+        "description": "Bridal Makeup - Radhika Wedding",
+        "date": "2026-10-24T13:54:33.159Z",
+        "category": "Bridal"
+      },
+      {
+        "id": "ern_2",
+        "amount": 14000,
+        "description": "Cocktail Glam - Shreya Reception",
+        "date": "2026-10-17T13:54:33.159Z",
+        "category": "Party"
+      }
+    ],
+    "pageViews": [
+      {
+        "id": "0.8232186481581318",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.15671048141405908",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.4574236346990318",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.09312096741895848",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.3062707393701394",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.6195622417918225",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.2795843591136178",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.601014644295011",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.7557538893155891",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.901195733840507",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.3998974867034243",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.11761029015287272",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.8292660322310947",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.22474157244459014",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.4277843834158781",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.537078126083026",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.309267600916312",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.03947172141380617",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.32760728472345924",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.7225054359058909",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.8363431977103074",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.3457612052724427",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.06531400891518357",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.010633026488632846",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.18550339224314039",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.07917836005958956",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.22440779315907078",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.2848155972869233",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.48459518588276773",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.0831214346120176",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.49291814463284445",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.45398379830463376",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.29624942026691425",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.6673185328149063",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.8755400186081985",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.8892836167328058",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.5351653744217779",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.08383530372249337",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.4478067079718928",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.20141593569589478",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.5770867851522203",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.07728513515881963",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.3375521703175175",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.004421266030068094",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.8492615884771312",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.1796584081431435",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.8390153806520781",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.8811537151424759",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.6007051088911959",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.9487556865008062",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.457941426950099",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.47722852134375504",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.18178130760722455",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.9877197334890631",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.051593646129502124",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.916752589572256",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.8623496570070303",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.41041009099359327",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.10062642957323487",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.7233525263138467",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.045535524971240915",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.27233635969260495",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.84627039298886",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.552768595779585",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.6654971985847086",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.7772887971462532",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.10213809764524284",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.09364530962297901",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.1974315938250436",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.260501194635975",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.7604845401764482",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.05880326734554253",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.7036094040331473",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.2135821048851292",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.8361070550630677",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.9436388095863176",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.0780689960320946",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.27460141672453764",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.3929854860371871",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.9895762053824476",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.32818672703098606",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.8551705422523134",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.40223931151763226",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.09043939932965683",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.5481829631819549",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.43142210925611024",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.010229572992193736",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.7261651554327525",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.5841833571735552",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.5569189353751982",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.5719299956494669",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.4823550467911897",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.4214990748854909",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.5249727475317534",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.18099925100660597",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.34417688109311473",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.5817047220856222",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.6134243393178653",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.996097083617843",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.8034869058614558",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.361440590681248",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.05929906577601818",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.6519219825515127",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.6727914837941147",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.4557012908346134",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.7990325782917334",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.41276798469838616",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.09503468752186328",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.9323238876311785",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.7587222106577898",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.9038355108178615",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.07457652236414714",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.45622092519658086",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.34865644509438365",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.8562452749931442",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.2570286708643088",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.009728025884258806",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.24170559566371397",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.755425929554661",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.07167660391660513",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.8053829805413635",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.20494078472688837",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.9197743018981079",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.8055075487163379",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.528714374686699",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.4297465269621038",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.42952066878098594",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.2145802029853371",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.5168848176077157",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.1335770206103304",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.39785584980785416",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.3187710151271599",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.9629652215078444",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.5097551519886161",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.8707351284464747",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.034568468251533924",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.308017086665784",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.215788417143844",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.05050330843762485",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.9769259401508377",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.4281286724794108",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.8105156835876659",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.1888800350680233",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.6074111928914387",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.9358274064562324",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.7719025246159633",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.132136469638928",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "0.5842718416141801",
+        "createdAt": "2026-10-24T13:54:33.159Z"
+      },
+      {
+        "id": "pv_3ng5mn5",
+        "createdAt": "2026-10-24T14:01:53.367Z",
+        "artistId": "art_priya_sharma"
+      },
+      {
+        "id": "pv_vwmlkkq",
+        "createdAt": "2026-10-24T14:02:14.958Z",
+        "artistId": "art_priya_sharma"
+      },
+      {
+        "id": "pv_otz8lzp",
+        "createdAt": "2026-10-24T14:02:43.832Z",
+        "artistId": "art_priya_sharma"
+      },
+      {
+        "id": "pv_884aq6p",
+        "createdAt": "2026-10-24T14:02:50.228Z",
+        "artistId": "art_priya_sharma"
+      },
+      {
+        "id": "pv_3zii8lj",
+        "createdAt": "2026-10-24T14:22:39.421Z",
+        "artistId": "art_priya_sharma"
+      },
+      {
+        "id": "pv_pekn450",
+        "createdAt": "2026-10-24T14:24:41.781Z",
+        "artistId": "art_priya_sharma"
+      }
+    ]
+  },
+  {
+    "id": "art_tanya_noida",
+    "slug": "tanyamakeup",
+    "email": "tanya@example.com",
+    "phone": "9876543210",
+    "passwordHash": "$2b$10$o.emONwxPBcuTsb2YILh6ODz.kAt6O8U6FA4QzN49Q1IGSEJETUM6",
+    "name": "Tanya Mehra",
+    "businessName": "Artistry by Tanya",
+    "tagline": "Modern Editorial & Contemporary Bridal Looks",
+    "bio": "Noida & East Delhi based bridal artist. Trained from London School of Makeup. Master of clean girl aesthetics and featherweight airbrush.",
+    "avatarUrl": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80",
+    "instagramHandle": "artistrybytanya",
+    "whatsappNumber": "9876543210",
+    "city": "Delhi NCR",
+    "locality": "Noida",
+    "yearsOfExp": 4,
+    "isVerified": true,
+    "isActive": true,
+    "showWhatsapp": true,
+    "showBookingForm": true,
+    "services": [
+      {
+        "id": "srv_t1",
+        "name": "Editorial Bridal Package",
+        "duration": 150,
+        "priceType": "fixed",
+        "price": 22000,
+        "category": "bridal",
+        "isActive": true
+      }
+    ],
+    "portfolio": [
+      {
+        "id": "pf_t1",
+        "imageUrl": "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80",
+        "caption": "Dewy Modern Bride",
+        "category": "bridal",
+        "isFeatured": true
+      }
+    ],
+    "reviews": [
+      {
+        "id": "rev_t1",
+        "clientName": "Nisha B.",
+        "rating": 5,
+        "comment": "So smooth and gorgeous. Highly recommend Tanya for modern brides.",
+        "createdAt": "2026-10-24T13:54:33.218Z"
+      }
+    ],
+    "bookings": [],
+    "clients": [],
+    "earnings": [],
+    "pageViews": [
+      {
+        "id": "0.1416556313683217",
+        "createdAt": "2026-10-24T13:54:33.218Z"
+      },
+      {
+        "id": "0.8872905163816364",
+        "createdAt": "2026-10-24T13:54:33.218Z"
+      },
+      {
+        "id": "0.6740334536514527",
+        "createdAt": "2026-10-24T13:54:33.218Z"
+      },
+      {
+        "id": "0.7904776958540972",
+        "createdAt": "2026-10-24T13:54:33.218Z"
+      },
+      {
+        "id": "0.18887321210063246",
+        "createdAt": "2026-10-24T13:54:33.218Z"
+      },
+      {
+        "id": "0.10986303077293791",
+        "createdAt": "2026-10-24T13:54:33.219Z"
+      },
+      {
+        "id": "0.19110084915507375",
+        "createdAt": "2026-10-24T13:54:33.219Z"
+      },
+      {
+        "id": "0.28650133575905046",
+        "createdAt": "2026-10-24T13:54:33.219Z"
+      },
+      {
+        "id": "0.15325479141087694",
+        "createdAt": "2026-10-24T13:54:33.219Z"
+      },
+      {
+        "id": "0.6809371412714483",
+        "createdAt": "2026-10-24T13:54:33.219Z"
+      },
+      {
+        "id": "0.3458797716912585",
+        "createdAt": "2026-10-24T13:54:33.219Z"
+      },
+      {
+        "id": "0.09307383049169426",
+        "createdAt": "2026-10-24T13:54:33.219Z"
+      },
+      {
+        "id": "0.12149003905121991",
+        "createdAt": "2026-10-24T13:54:33.219Z"
+      },
+      {
+        "id": "0.953360436843006",
+        "createdAt": "2026-10-24T13:54:33.219Z"
+      },
+      {
+        "id": "0.3940188362185775",
+        "createdAt": "2026-10-24T13:54:33.219Z"
+      },
+      {
+        "id": "0.12142676849292067",
+        "createdAt": "2026-10-24T13:54:33.219Z"
+      },
+      {
+        "id": "0.7685099539641315",
+        "createdAt": "2026-10-24T13:54:33.219Z"
+      },
+      {
+        "id": "0.029825551453613985",
+        "createdAt": "2026-10-24T13:54:33.219Z"
+      },
+      {
+        "id": "0.4530037273213463",
+        "createdAt": "2026-10-24T13:54:33.219Z"
+      },
+      {
+        "id": "0.8181836182173585",
+        "createdAt": "2026-10-24T13:54:33.219Z"
+      },
+      {
+        "id": "0.26903246637704525",
+        "createdAt": "2026-10-24T13:54:33.219Z"
+      },
+      {
+        "id": "0.6152843274907718",
+        "createdAt": "2026-10-24T13:54:33.219Z"
+      },
+      {
+        "id": "0.7724080220230961",
+        "createdAt": "2026-10-24T13:54:33.219Z"
+      },
+      {
+        "id": "0.652193545730867",
+        "createdAt": "2026-10-24T13:54:33.219Z"
+      },
+      {
+        "id": "0.4047985099796154",
+        "createdAt": "2026-10-24T13:54:33.219Z"
+      },
+      {
+        "id": "0.3783579624918475",
+        "createdAt": "2026-10-24T13:54:33.219Z"
+      },
+      {
+        "id": "0.8387567781686677",
+        "createdAt": "2026-10-24T13:54:33.219Z"
+      },
+      {
+        "id": "0.20473378992374247",
+        "createdAt": "2026-10-24T13:54:33.219Z"
+      },
+      {
+        "id": "0.4119352752555502",
+        "createdAt": "2026-10-24T13:54:33.219Z"
+      },
+      {
+        "id": "0.5326810876142586",
+        "createdAt": "2026-10-24T13:54:33.219Z"
+      },
+      {
+        "id": "0.91934967527719",
+        "createdAt": "2026-10-24T13:54:33.219Z"
+      },
+      {
+        "id": "0.09794002495960497",
+        "createdAt": "2026-10-24T13:54:33.219Z"
+      },
+      {
+        "id": "0.7384040724726714",
+        "createdAt": "2026-10-24T13:54:33.219Z"
+      },
+      {
+        "id": "0.5605368816279545",
+        "createdAt": "2026-10-24T13:54:33.219Z"
+      },
+      {
+        "id": "0.9702931391410364",
+        "createdAt": "2026-10-24T13:54:33.219Z"
+      },
+      {
+        "id": "0.25553562791999773",
+        "createdAt": "2026-10-24T13:54:33.219Z"
+      },
+      {
+        "id": "0.298005218278636",
+        "createdAt": "2026-10-24T13:54:33.219Z"
+      },
+      {
+        "id": "0.4983627138216056",
+        "createdAt": "2026-10-24T13:54:33.219Z"
+      },
+      {
+        "id": "0.23250353725575879",
+        "createdAt": "2026-10-24T13:54:33.219Z"
+      },
+      {
+        "id": "0.37634755870677394",
+        "createdAt": "2026-10-24T13:54:33.219Z"
+      },
+      {
+        "id": "0.4626538966210486",
+        "createdAt": "2026-10-24T13:54:33.219Z"
+      },
+      {
+        "id": "0.6919774594958336",
+        "createdAt": "2026-10-24T13:54:33.219Z"
+      },
+      {
+        "id": "0.8617159257630266",
+        "createdAt": "2026-10-24T13:54:33.219Z"
+      },
+      {
+        "id": "0.41026544791222075",
+        "createdAt": "2026-10-24T13:54:33.219Z"
+      },
+      {
+        "id": "0.8738022100460049",
+        "createdAt": "2026-10-24T13:54:33.219Z"
+      },
+      {
+        "id": "0.7560657843450407",
+        "createdAt": "2026-10-24T13:54:33.219Z"
+      },
+      {
+        "id": "0.588586155590041",
+        "createdAt": "2026-10-24T13:54:33.219Z"
+      },
+      {
+        "id": "0.8045384412798982",
+        "createdAt": "2026-10-24T13:54:33.219Z"
+      },
+      {
+        "id": "0.5698846330496264",
+        "createdAt": "2026-10-24T13:54:33.219Z"
+      },
+      {
+        "id": "0.1696515639699241",
+        "createdAt": "2026-10-24T13:54:33.219Z"
+      },
+      {
+        "id": "0.9912487600515385",
+        "createdAt": "2026-10-24T13:54:33.219Z"
+      },
+      {
+        "id": "0.6898254632037589",
+        "createdAt": "2026-10-24T13:54:33.219Z"
+      },
+      {
+        "id": "0.5304472197628437",
+        "createdAt": "2026-10-24T13:54:33.219Z"
+      },
+      {
+        "id": "0.037786513100390606",
+        "createdAt": "2026-10-24T13:54:33.219Z"
+      },
+      {
+        "id": "0.22862013656707125",
+        "createdAt": "2026-10-24T13:54:33.219Z"
+      },
+      {
+        "id": "0.585353571432476",
+        "createdAt": "2026-10-24T13:54:33.219Z"
+      },
+      {
+        "id": "0.17451757376348564",
+        "createdAt": "2026-10-24T13:54:33.221Z"
+      },
+      {
+        "id": "0.9083453798622994",
+        "createdAt": "2026-10-24T13:54:33.221Z"
+      },
+      {
+        "id": "0.8383382646012028",
+        "createdAt": "2026-10-24T13:54:33.221Z"
+      },
+      {
+        "id": "0.36053924371725177",
+        "createdAt": "2026-10-24T13:54:33.221Z"
+      },
+      {
+        "id": "0.17213340418255152",
+        "createdAt": "2026-10-24T13:54:33.221Z"
+      },
+      {
+        "id": "0.04215687261297307",
+        "createdAt": "2026-10-24T13:54:33.221Z"
+      },
+      {
+        "id": "0.7797429418552403",
+        "createdAt": "2026-10-24T13:54:33.221Z"
+      },
+      {
+        "id": "0.18779039255707863",
+        "createdAt": "2026-10-24T13:54:33.221Z"
+      },
+      {
+        "id": "0.7068027572227141",
+        "createdAt": "2026-10-24T13:54:33.221Z"
+      },
+      {
+        "id": "0.8773533573702956",
+        "createdAt": "2026-10-24T13:54:33.221Z"
+      },
+      {
+        "id": "0.8903232475407717",
+        "createdAt": "2026-10-24T13:54:33.221Z"
+      },
+      {
+        "id": "0.3946701765509666",
+        "createdAt": "2026-10-24T13:54:33.221Z"
+      },
+      {
+        "id": "0.6729968984962412",
+        "createdAt": "2026-10-24T13:54:33.221Z"
+      },
+      {
+        "id": "0.7756911589882097",
+        "createdAt": "2026-10-24T13:54:33.221Z"
+      },
+      {
+        "id": "0.26343335661362677",
+        "createdAt": "2026-10-24T13:54:33.221Z"
+      },
+      {
+        "id": "0.17662592643493713",
+        "createdAt": "2026-10-24T13:54:33.221Z"
+      },
+      {
+        "id": "0.8430820375561676",
+        "createdAt": "2026-10-24T13:54:33.221Z"
+      },
+      {
+        "id": "0.3229446002794717",
+        "createdAt": "2026-10-24T13:54:33.221Z"
+      },
+      {
+        "id": "0.8768693679058277",
+        "createdAt": "2026-10-24T13:54:33.221Z"
+      },
+      {
+        "id": "0.9834575993395755",
+        "createdAt": "2026-10-24T13:54:33.221Z"
+      },
+      {
+        "id": "0.5617560839569973",
+        "createdAt": "2026-10-24T13:54:33.221Z"
+      },
+      {
+        "id": "0.7713690630418241",
+        "createdAt": "2026-10-24T13:54:33.221Z"
+      },
+      {
+        "id": "0.901297172553331",
+        "createdAt": "2026-10-24T13:54:33.221Z"
+      },
+      {
+        "id": "0.37066334352268693",
+        "createdAt": "2026-10-24T13:54:33.221Z"
+      },
+      {
+        "id": "0.34696017230929743",
+        "createdAt": "2026-10-24T13:54:33.221Z"
+      },
+      {
+        "id": "0.08772970003494207",
+        "createdAt": "2026-10-24T13:54:33.221Z"
+      }
+    ]
+  },
+  {
+    "id": "art_upgxd68",
+    "createdAt": "2026-10-24T14:30:45.543Z",
+    "updatedAt": "2026-10-24T14:30:45.543Z",
+    "isVerified": true,
+    "isActive": true,
+    "showWhatsapp": true,
+    "showBookingForm": true,
+    "yearsOfExp": 4,
+    "services": [
+      {
+        "id": "srv_6t2epju",
+        "artistId": "art_upgxd68",
+        "name": "Signature HD Bridal Glam",
+        "category": "bridal",
+        "description": "Full HD airbrush finish, 3D lashes, jewelry & dupatta draping + touchup kit.",
+        "priceType": "fixed",
+        "price": 25000,
+        "duration": 180
+      },
+      {
+        "id": "srv_0ej7fc3",
+        "artistId": "art_upgxd68",
+        "name": "Sangeet / Cocktail Glam",
+        "category": "party",
+        "description": "Luminous glowy skin, glitter eyes, modern hair styling.",
+        "priceType": "fixed",
+        "price": 12000,
+        "duration": 120
+      },
+      {
+        "id": "srv_z7m3nws",
+        "artistId": "art_upgxd68",
+        "name": "Engagement Look",
+        "category": "engagement",
+        "description": "Soft dewy finish, romantic hair updos, eyelash extensions.",
+        "priceType": "range",
+        "priceMin": 15000,
+        "priceMax": 18000,
+        "duration": 150
+      }
+    ],
+    "portfolio": [],
+    "bookings": [],
+    "reviews": [],
+    "earnings": [],
+    "clients": [],
+    "auditResults": [],
+    "pageViews": [
+      {
+        "id": "pv_2wvr3d3",
+        "createdAt": "2026-10-24T14:30:45.626Z",
+        "artistId": "art_upgxd68"
+      }
+    ],
+    "email": "realartist_1792852245092@gmail.com",
+    "phone": "9844489482",
+    "passwordHash": "b181aa569be49818f7fe3bff2f785a2b:46704603e7702649f879e3377f066805c8ca23fc2d88c7a56c7ffaf0e3c66510a1cc9c31c783c9dd15a81081441e96f1c487421b8a19aff9eb91a86b9c287379",
+    "name": "Ananya Verma Glam",
+    "slug": "ananya-verma-glam",
+    "instagramHandle": "ananyavermaglam",
+    "whatsappNumber": "9844489482",
+    "city": "Delhi NCR",
+    "locality": "South Delhi",
+    "tagline": "Bridal & Editorial Makeup Artist",
+    "bio": "Crafting bespoke bridal looks with luxury skin finishes. Available for destination and Delhi NCR bookings."
+  },
+  {
+    "id": "art_12vs3kj",
+    "createdAt": "2026-10-24T14:46:06.530Z",
+    "updatedAt": "2026-10-24T14:46:06.530Z",
+    "isVerified": true,
+    "isActive": true,
+    "showWhatsapp": true,
+    "showBookingForm": true,
+    "yearsOfExp": 4,
+    "services": [
+      {
+        "id": "srv_15wc33c",
+        "artistId": "art_12vs3kj",
+        "name": "Signature HD Bridal Glam",
+        "category": "bridal",
+        "description": "Full HD airbrush finish, 3D lashes, jewelry & dupatta draping + touchup kit.",
+        "priceType": "fixed",
+        "price": 25000,
+        "duration": 180
+      },
+      {
+        "id": "srv_rneirpo",
+        "artistId": "art_12vs3kj",
+        "name": "Sangeet / Cocktail Glam",
+        "category": "party",
+        "description": "Luminous glowy skin, glitter eyes, modern hair styling.",
+        "priceType": "fixed",
+        "price": 12000,
+        "duration": 120
+      },
+      {
+        "id": "srv_04stkrd",
+        "artistId": "art_12vs3kj",
+        "name": "Engagement Look",
+        "category": "engagement",
+        "description": "Soft dewy finish, romantic hair updos, eyelash extensions.",
+        "priceType": "range",
+        "priceMin": 15000,
+        "priceMax": 18000,
+        "duration": 150
+      }
+    ],
+    "portfolio": [],
+    "bookings": [],
+    "reviews": [],
+    "earnings": [],
+    "clients": [],
+    "auditResults": [],
+    "pageViews": [
+      {
+        "id": "pv_nzd2ot3",
+        "createdAt": "2026-10-24T14:46:06.591Z",
+        "artistId": "art_12vs3kj"
+      }
+    ],
+    "email": "shreya.glam_1792853166155@gmail.com",
+    "phone": "",
+    "passwordHash": "google_oauth_user",
+    "name": "Shreya Kapoor Studio",
+    "businessName": "Shreya Kapoor Studio Studio",
+    "slug": "shreya-kapoor-studio",
+    "avatarUrl": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80",
+    "city": "Delhi NCR",
+    "locality": "South Delhi",
+    "tagline": "Bridal & Editorial Makeup Artist",
+    "bio": "Crafting bespoke bridal looks with luxury skin finishes. Available for destination and Delhi NCR bookings."
+  }
+]
