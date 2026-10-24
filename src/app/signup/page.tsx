@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { Sparkles, ShieldCheck, CheckCircle2 } from 'lucide-react'
@@ -28,11 +28,75 @@ function SignupContent() {
   const [emailInput, setEmailInput] = useState('')
   const [nameInput, setNameInput] = useState('')
 
+  // Handle Supabase OAuth redirect back to this page
+  useEffect(() => {
+    const handleOAuthRedirect = async () => {
+      const hash = window.location.hash
+      if (hash && hash.includes('access_token')) {
+        setLoading(true)
+        const params = new URLSearchParams(hash.replace('#', ''))
+        const accessToken = params.get('access_token')
+        const refreshToken = params.get('refresh_token')
+        if (accessToken) {
+          const { data: sessionData } = await supabase.auth.setSession({
+            access_token: accessToken,
+            refresh_token: refreshToken || ''
+          })
+          if (sessionData?.user) {
+            await registerAndRedirect(sessionData.user)
+            return
+          }
+        }
+        setLoading(false)
+        setError('Google sign-up failed. Please try again.')
+        return
+      }
+
+      const urlParams = new URLSearchParams(window.location.search)
+      const code = urlParams.get('code')
+      if (code) {
+        setLoading(true)
+        const { data: sessionData } = await supabase.auth.exchangeCodeForSession(code)
+        if (sessionData?.user) {
+          await registerAndRedirect(sessionData.user)
+          return
+        }
+        setLoading(false)
+        setError('Google sign-up failed. Please try again.')
+      }
+    }
+
+    handleOAuthRedirect()
+  }, [])
+
+  const registerAndRedirect = async (user: any) => {
+    try {
+      const email = user.email
+      const name = user.user_metadata?.full_name || user.user_metadata?.name || email?.split('@')[0]
+      const picture = user.user_metadata?.avatar_url || user.user_metadata?.picture || null
+
+      const res = await fetch('/api/auth/google', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ userInfo: { email, name, picture } })
+      })
+      if (res.ok) {
+        router.push('/dashboard')
+      } else {
+        setError('Account setup failed. Please try again.')
+        setLoading(false)
+      }
+    } catch {
+      setError('An error occurred. Please try again.')
+      setLoading(false)
+    }
+  }
+
   const handleGoogleSignup = async (customEmail?: string, customName?: string) => {
     setLoading(true)
     setError('')
 
-    // Demo/test mode with custom email — use API route
+    // Demo/test mode with custom email
     if (customEmail) {
       try {
         const res = await fetch('/api/auth/google', {
@@ -60,12 +124,12 @@ function SignupContent() {
       return
     }
 
-    // Real Google OAuth via Supabase
+    // Real Google OAuth — redirect back to this same /signup page
     try {
       const { error: oauthError } = await supabase.auth.signInWithOAuth({
         provider: 'google',
         options: {
-          redirectTo: `${process.env.NEXT_PUBLIC_APP_URL || window.location.origin}/api/auth/callback`
+          redirectTo: `${window.location.origin}/signup`
         }
       })
       if (oauthError) {
