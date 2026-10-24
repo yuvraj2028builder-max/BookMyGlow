@@ -6,11 +6,9 @@ import Link from 'next/link'
 import { Sparkles, ShieldCheck } from 'lucide-react'
 import { createClient } from '@supabase/supabase-js'
 import { LangProvider, LangToggle, useLang } from '@/components/lang-provider'
+import { getSupabaseClient } from '@/lib/supabase-client'
 
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-)
+const supabase = getSupabaseClient()
 
 export default function LoginPage() {
   return (
