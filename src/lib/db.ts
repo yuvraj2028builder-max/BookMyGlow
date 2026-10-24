@@ -14,31 +14,45 @@ export const supabase = (supabaseUrl && supabaseKey)
   : null
 
 const DB_PATH = path.join(process.cwd(), 'data')
-if (!fs.existsSync(DB_PATH)) {
-  fs.mkdirSync(DB_PATH, { recursive: true })
+try {
+  if (!fs.existsSync(DB_PATH)) {
+    fs.mkdirSync(DB_PATH, { recursive: true })
+  }
+} catch {
+  // Vercel read-only filesystem — file ops will be skipped
 }
 
 function getTableFile(table: string) {
-  const filePath = path.join(DB_PATH, `${table}.json`)
-  if (!fs.existsSync(filePath)) {
-    fs.writeFileSync(filePath, JSON.stringify([]), 'utf-8')
+  try {
+    const filePath = path.join(DB_PATH, `${table}.json`)
+    if (!fs.existsSync(filePath)) {
+      fs.writeFileSync(filePath, JSON.stringify([]), 'utf-8')
+    }
+    return filePath
+  } catch {
+    return null
   }
-  return filePath
 }
 
 function readTable<T = any>(table: string): T[] {
   try {
     const file = getTableFile(table)
+    if (!file) return []
     const content = fs.readFileSync(file, 'utf-8')
     return JSON.parse(content || '[]')
-  } catch (err) {
+  } catch {
     return []
   }
 }
 
 function writeTable<T = any>(table: string, data: T[]): void {
-  const file = getTableFile(table)
-  fs.writeFileSync(file, JSON.stringify(data, null, 2), 'utf-8')
+  try {
+    const file = getTableFile(table)
+    if (!file) return
+    fs.writeFileSync(file, JSON.stringify(data, null, 2), 'utf-8')
+  } catch {
+    // Silently skip on Vercel
+  }
 }
 
 export const db = {
@@ -50,19 +64,22 @@ export const db = {
         if (where.slug) query = query.eq('slug', where.slug)
         if (where.email) query = query.eq('email', where.email)
         const { data } = await query.maybeSingle()
-        if (data) return data
+        return data || null
       }
       const all = readTable('artists')
       return all.find(a => (where.id && a.id === where.id) || (where.slug && a.slug === where.slug) || (where.email && a.email === where.email)) || null
     },
     findFirst: async ({ where, select, include }: { where: any; select?: any; include?: any }) => {
-      if (supabase && where.OR) {
-        for (const cond of where.OR) {
-          let q = supabase.from('artists').select('*')
-          if (cond.email) q = q.eq('email', cond.email)
-          if (cond.phone) q = q.eq('phone', cond.phone)
-          const { data } = await q.maybeSingle()
-          if (data) return data
+      if (supabase) {
+        if (where.OR) {
+          for (const cond of where.OR) {
+            let q = supabase.from('artists').select('*')
+            if (cond.email) q = q.eq('email', cond.email)
+            if (cond.phone) q = q.eq('phone', cond.phone)
+            const { data } = await q.maybeSingle()
+            if (data) return data
+          }
+          return null
         }
       }
       const all = readTable('artists')
@@ -119,38 +136,59 @@ export const db = {
       }
 
       if (supabase) {
-        try {
-          await supabase.from('artists').insert([{
-            id,
-            slug: newArtist.slug,
-            email: newArtist.email,
-            phone: newArtist.phone || '',
-            password_hash: newArtist.passwordHash,
-            name: newArtist.name,
-            business_name: newArtist.businessName,
-            bio: newArtist.bio,
-            tagline: newArtist.tagline,
-            avatar_url: newArtist.avatarUrl,
-            city: newArtist.city,
-            locality: newArtist.locality
-          }])
-        } catch (e) {
-          console.warn('Supabase insert warning:', e)
+        const { error: insertError } = await supabase.from('artists').insert([{
+          id,
+          slug: newArtist.slug,
+          email: newArtist.email,
+          phone: newArtist.phone || '',
+          password_hash: newArtist.passwordHash,
+          name: newArtist.name,
+          business_name: newArtist.businessName,
+          bio: newArtist.bio,
+          tagline: newArtist.tagline,
+          avatar_url: newArtist.avatarUrl,
+          city: newArtist.city,
+          locality: newArtist.locality
+        }])
+        if (insertError) {
+          console.error('Supabase insert error:', insertError)
+          throw new Error('Failed to create artist: ' + insertError.message)
         }
+        // Also insert services into Supabase
+        if (newArtist.services?.length > 0) {
+          await supabase.from('services').insert(
+            newArtist.services.map((s: any) => ({
+              id: s.id,
+              artist_id: id,
+              name: s.name,
+              category: s.category,
+              description: s.description,
+              price_type: s.priceType,
+              price: s.price || null,
+              price_min: s.priceMin || null,
+              price_max: s.priceMax || null,
+              duration: s.duration
+            }))
+          )
+        }
+        return newArtist
       }
 
-      const all = readTable('artists')
-      all.push(newArtist)
-      writeTable('artists', all)
+      // Local file fallback (dev only)
+      try {
+        const all = readTable('artists')
+        all.push(newArtist)
+        writeTable('artists', all)
+      } catch (e) {
+        console.warn('Local file write skipped:', e)
+      }
       return newArtist
     },
     update: async ({ where, data }: { where: { id: string }; data: any }) => {
       if (supabase) {
-        try {
-          await supabase.from('artists').update(data).eq('id', where.id)
-        } catch (e) {
-          console.warn(e)
-        }
+        const { error: updateError } = await supabase.from('artists').update(data).eq('id', where.id)
+        if (updateError) console.warn('Supabase update warning:', updateError)
+        return { id: where.id, ...data }
       }
       const all = readTable('artists')
       const idx = all.findIndex(a => a.id === where.id)
