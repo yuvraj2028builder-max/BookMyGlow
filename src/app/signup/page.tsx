@@ -4,7 +4,13 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { Sparkles, ShieldCheck, CheckCircle2 } from 'lucide-react'
+import { createClient } from '@supabase/supabase-js'
 import { LangProvider, LangToggle, useLang } from '@/components/lang-provider'
+
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+)
 
 export default function SignupPage() {
   return (
@@ -26,31 +32,48 @@ function SignupContent() {
     setLoading(true)
     setError('')
 
-    try {
-      const email = customEmail || 'newartist@gmail.com'
-      const name = customName || email.split('@')[0]
-
-      const res = await fetch('/api/auth/google', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          userInfo: {
-            email,
-            name,
-            picture: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80'
-          }
+    // Demo/test mode with custom email — use API route
+    if (customEmail) {
+      try {
+        const res = await fetch('/api/auth/google', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            userInfo: {
+              email: customEmail,
+              name: customName || customEmail.split('@')[0],
+              picture: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80'
+            }
+          })
         })
-      })
+        const data = await res.json()
+        if (res.ok) {
+          router.push('/dashboard')
+        } else {
+          setError(data.error || 'Google signup failed')
+        }
+      } catch {
+        setError('An error occurred during sign-up.')
+      } finally {
+        setLoading(false)
+      }
+      return
+    }
 
-      const data = await res.json()
-      if (res.ok) {
-        router.push('/dashboard')
-      } else {
-        setError(data.error || 'Google signup failed')
+    // Real Google OAuth via Supabase
+    try {
+      const { error: oauthError } = await supabase.auth.signInWithOAuth({
+        provider: 'google',
+        options: {
+          redirectTo: `${process.env.NEXT_PUBLIC_APP_URL || window.location.origin}/api/auth/callback`
+        }
+      })
+      if (oauthError) {
+        setError(oauthError.message)
+        setLoading(false)
       }
     } catch {
-      setError('An error occurred during Google Sign-Up.')
-    } finally {
+      setError('Google sign-up failed. Please try again.')
       setLoading(false)
     }
   }

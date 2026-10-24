@@ -3,8 +3,14 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
-import { Sparkles, ArrowRight, ShieldCheck, HeartHandshake } from 'lucide-react'
+import { Sparkles, ShieldCheck } from 'lucide-react'
+import { createClient } from '@supabase/supabase-js'
 import { LangProvider, LangToggle, useLang } from '@/components/lang-provider'
+
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+)
 
 export default function LoginPage() {
   return (
@@ -25,31 +31,49 @@ function LoginContent() {
     setLoading(true)
     setError('')
 
-    try {
-      const email = userEmail || 'artist@gmail.com'
-      const name = userName || email.split('@')[0]
-
-      const res = await fetch('/api/auth/google', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          userInfo: {
-            email,
-            name,
-            picture: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80'
-          }
+    // If a custom email is typed (demo/test mode), use old API route
+    if (userEmail) {
+      try {
+        const res = await fetch('/api/auth/google', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            userInfo: {
+              email: userEmail,
+              name: userName || userEmail.split('@')[0],
+              picture: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80'
+            }
+          })
         })
-      })
-
-      const data = await res.json()
-      if (res.ok) {
-        router.push('/dashboard')
-      } else {
-        setError(data.error || 'Google sign-in failed')
+        const data = await res.json()
+        if (res.ok) {
+          router.push('/dashboard')
+        } else {
+          setError(data.error || 'Sign-in failed')
+        }
+      } catch {
+        setError('An error occurred during sign-in.')
+      } finally {
+        setLoading(false)
       }
+      return
+    }
+
+    // Real Google OAuth via Supabase
+    try {
+      const { error: oauthError } = await supabase.auth.signInWithOAuth({
+        provider: 'google',
+        options: {
+          redirectTo: `${process.env.NEXT_PUBLIC_APP_URL || window.location.origin}/api/auth/callback`
+        }
+      })
+      if (oauthError) {
+        setError(oauthError.message)
+        setLoading(false)
+      }
+      // On success Supabase redirects the browser — no need to do anything
     } catch {
-      setError('An error occurred during Google Sign-In.')
-    } finally {
+      setError('Google sign-in failed. Please try again.')
       setLoading(false)
     }
   }
